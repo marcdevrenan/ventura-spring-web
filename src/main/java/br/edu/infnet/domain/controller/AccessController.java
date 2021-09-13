@@ -34,6 +34,7 @@ public class AccessController {
         List jobs = jobService.listByUserId(Integer.parseInt(id));
         ModelAndView response = new ModelAndView("/company/home");
         response.addObject("jobs", jobs);
+
         return response;
     }
 
@@ -44,15 +45,25 @@ public class AccessController {
         if (user != null && email.equals(user.getEmail()) && password.equals(user.getPassword())) {
             model.addAttribute("user", user);
             String inbox = null;
+
             if (user.getType() == User.COMPANY) {
                 JobService jobService = new JobService();
                 List jobs = jobService.listByUserId(user.getId());
                 model.addAttribute("jobs", jobs);
                 inbox = "/company/home";
+
             } else if (user.getType() == User.CANDIDATE) {
+                List jobs = jobService.listJobs();
+                model.addAttribute("jobs", jobs);
                 inbox = "/candidate/home";
+
             } else {
+                List users = userService.listUsers();
+                model.addAttribute("users", users);
+                List jobs = jobService.listJobs();
+                model.addAttribute("jobs", jobs);
                 inbox = "/admin/home";
+
             }
 
             return inbox;

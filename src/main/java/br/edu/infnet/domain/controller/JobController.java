@@ -20,6 +20,14 @@ public class JobController {
 
     private final JobService jobService = new JobService();
 
+    @GetMapping(value = "/candidate/home/")
+    public String getJobList(Model model) {
+        List jobs = jobService.listJobs();
+        model.addAttribute("jobs", jobs);
+
+        return "/candidate/home";
+    }
+
     @GetMapping(value = "/create")
     public String postJob() {
         return "/company/postJob";

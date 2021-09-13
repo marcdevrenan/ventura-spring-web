@@ -111,5 +111,7 @@
     </c:if>
 </div>
 
+<c:import url="/WEB-INF/jsp/access/footer.jsp"/>
+
 </body>
 </html>

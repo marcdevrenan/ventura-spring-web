@@ -33,9 +33,17 @@ public class UserController {
             inbox = "/company/home";
 
         } else if (user.getType() == User.CANDIDATE) {
+            JobService jobService = new JobService();
+            List jobs = jobService.listJobs();
+            model.addAttribute("jobs", jobs);
             inbox = "/candidate/home";
 
         } else {
+            List users = userService.listUsers();
+            model.addAttribute("users", users);
+            JobService jobService = new JobService();
+            List jobs = jobService.listJobs();
+            model.addAttribute("jobs", jobs);
             inbox = "/admin/home";
         }
 

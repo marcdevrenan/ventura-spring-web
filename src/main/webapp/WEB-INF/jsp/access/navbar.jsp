@@ -2,14 +2,14 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">Home</a>
+            <a class="navbar-brand" href="/">VenturaHR</a>
         </div>
-        <ul class="nav navbar-nav">
-            <c:if test="${not empty user}">
-                <li><a href="#">Page 1</a></li>
-                <li><a href="#">Page 2</a></li>
-            </c:if>
-        </ul>
+<%--        <ul class="nav navbar-nav">--%>
+<%--            <c:if test="${not empty user}">--%>
+<%--                <li><a href="#">Page 1</a></li>--%>
+<%--                <li><a href="#">Page 2</a></li>--%>
+<%--            </c:if>--%>
+<%--        </ul>--%>
         <ul class="nav navbar-nav navbar-right">
             <c:if test="${empty user}">
                 <li><a href="/user"><span class="glyphicon glyphicon-user"></span>Sign Up</a></li>

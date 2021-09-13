@@ -14,20 +14,34 @@
 
 <c:import url="/WEB-INF/jsp/access/navbar.jsp"/>
 
-<div class="container">
-    <h2>VenturaHR Login</h2>
+<div class="container text-center">
+    <div class="page-header">
+        <h2>Create your Ventura Account</h2>
+        <h4>to continue to VenturaHR</h4>
+    </div>
+
     <form action="/access/login" method="post">
-        <div class="form-group">
-            <label>Email:</label>
-            <input type="email" class="form-control" placeholder="Enter email" name="email">
+        <div class="row">
+            <div class="col-sm-6">
+                <input type="email" class="form-control" style="width:555px" placeholder="example@test.com"
+                       name="email">
+            </div>
+            <div class="col-sm-6">
+                <input type="password" class="form-control" style="width:555px" placeholder="password" name="password">
+            </div>
         </div>
-        <div class="form-group">
-            <label>Password:</label>
-            <input type="password" class="form-control" placeholder="Enter password" name="password">
+        <br>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-info">Login</button>
+            </div>
         </div>
-        <button type="submit" class="btn btn-default">Login</button>
     </form>
 </div>
+<br>
+
+<c:import url="/WEB-INF/jsp/access/footer.jsp"/>
 
 </body>
 </html>

@@ -13,6 +13,14 @@ public class JobService {
     private final String REST_URI = "http://localhost:8082/jobs";
     private final Client client = ClientBuilder.newClient();
 
+    public List listJobs() {
+        return client
+                .target(REST_URI)
+                .path("all-jobs")
+                .request(MediaType.APPLICATION_JSON)
+                .get(List.class);
+    }
+
     public List listByUserId(Integer userId) {
         return client
                 .target(REST_URI)

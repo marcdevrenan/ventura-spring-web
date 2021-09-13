@@ -6,11 +6,20 @@ import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 public class UserService {
 
     private final String REST_URI = "http://localhost:8081/users";
     private final Client client = ClientBuilder.newClient();
+
+    public List listUsers() {
+        return client
+                .target(REST_URI)
+                .path("all-users")
+                .request(MediaType.APPLICATION_JSON)
+                .get(List.class);
+    }
 
     public User getByEmail(String email) {
         return client

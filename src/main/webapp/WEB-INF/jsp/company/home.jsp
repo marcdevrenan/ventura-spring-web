@@ -58,8 +58,6 @@
                     </tr>
                 </c:forEach>
             </c:forEach>
-
-
             </tbody>
         </table>
     </c:if>
@@ -67,8 +65,9 @@
     <c:if test="${empty jobs}">
         <h3>There are no job offers posted!</h3>
     </c:if>
-
 </div>
+
+<c:import url="/WEB-INF/jsp/access/footer.jsp"/>
 
 </body>
 </html>
