@@ -27,24 +27,24 @@ public class UserController {
         String inbox = null;
 
         if (user.getType() == User.COMPANY) {
-            JobService jobService = new JobService();
-            List jobs = jobService.listByUserId(user.getId());
-            model.addAttribute("jobs", jobs);
-            inbox = "/company/home";
+//            JobService jobService = new JobService();
+//            List jobs = jobService.listByUserId(user.getId());
+//            model.addAttribute("jobs", jobs);
+            inbox = "redirect:/login";
 
         } else if (user.getType() == User.CANDIDATE) {
-            JobService jobService = new JobService();
-            List jobs = jobService.listJobs();
-            model.addAttribute("jobs", jobs);
-            inbox = "/candidate/home";
+//            JobService jobService = new JobService();
+//            List jobs = jobService.listJobs();
+//            model.addAttribute("jobs", jobs);
+            inbox = "redirect:/login";
 
         } else {
             List users = userService.listUsers();
-            model.addAttribute("users", users);
-            JobService jobService = new JobService();
-            List jobs = jobService.listJobs();
-            model.addAttribute("jobs", jobs);
-            inbox = "/admin/home";
+//            model.addAttribute("users", users);
+//            JobService jobService = new JobService();
+//            List jobs = jobService.listJobs();
+//            model.addAttribute("jobs", jobs);
+            inbox = "redirect:/login";
         }
 
         return inbox;

@@ -13,9 +13,11 @@
 
 <c:import url="/WEB-INF/jsp/access/navbar.jsp"/>
 
-<h1>Company</h1>
 <div class="container">
-    <h2>Welcome ${user.corporateName}</h2>
+    <div class="page-header">
+        <h2>Ventura System</h2>
+        <p>Welcome ${user.corporateName}</p>
+    </div>
 
     <a href="/create" class="btn btn-info" role="button">Post Job</a>
 

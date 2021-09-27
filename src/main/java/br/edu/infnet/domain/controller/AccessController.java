@@ -1,6 +1,7 @@
 package br.edu.infnet.domain.controller;
 
 import br.edu.infnet.domain.model.User;
+import br.edu.infnet.domain.service.CandidateJobService;
 import br.edu.infnet.domain.service.JobService;
 import br.edu.infnet.domain.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,7 @@ public class AccessController {
 
     private final UserService userService = new UserService();
     private final JobService jobService = new JobService();
+    private final CandidateJobService candidateJobService = new CandidateJobService();
 
     @GetMapping(value = "/")
     public String homePage() {
@@ -55,6 +57,9 @@ public class AccessController {
             } else if (user.getType() == User.CANDIDATE) {
                 List jobs = jobService.listJobs();
                 model.addAttribute("jobs", jobs);
+                Integer candidateId = user.getId();
+                List applications = candidateJobService.listByCandidateId(candidateId);
+                model.addAttribute("applications", applications);
                 inbox = "/candidate/home";
 
             } else {

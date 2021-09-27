@@ -13,11 +13,11 @@ public class CandidateJobService {
     private final String REST_URI = "http://localhost:8083/candidateJob";
     private final Client client = ClientBuilder.newClient();
 
-    public List listByCandidateJobId(Integer candidateJobId) {
+    public List listByCandidateId(Integer candidateId) {
         return client
                 .target(REST_URI)
-                .path("candidateJob")
-                .path(String.valueOf(candidateJobId))
+                .path("applications")
+                .path(String.valueOf(candidateId))
                 .request(MediaType.APPLICATION_JSON)
                 .get(List.class);
     }

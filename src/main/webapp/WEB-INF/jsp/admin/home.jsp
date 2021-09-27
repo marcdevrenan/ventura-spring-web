@@ -15,7 +15,11 @@
 <c:import url="/WEB-INF/jsp/access/navbar.jsp"/>
 
 <div class="container">
-    <h2>System Filter</h2>
+    <div class="page-header">
+        <h2>Ventura System</h2>
+        <p>Welcome ${user.firstName}</p>
+    </div>
+    <h3>System Filter</h3>
     <p>Type something in the input field to search the table for anything:</p>
     <input class="form-control" id="myInput" type="text" placeholder="Search...">
     <br>

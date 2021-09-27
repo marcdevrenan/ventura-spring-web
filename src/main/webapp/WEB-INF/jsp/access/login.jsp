@@ -16,24 +16,23 @@
 
 <div class="container text-center">
     <div class="page-header">
-        <h2>Create your Ventura Account</h2>
+        <h2>Login your Ventura Account</h2>
         <h4>to continue to VenturaHR</h4>
     </div>
 
     <form action="/access/login" method="post">
-        <div class="row">
-            <div class="col-sm-6">
-                <input type="email" class="form-control" style="width:555px" placeholder="example@test.com"
+        <div class="form-row">
+            <div class="form-group col-md-5">
+                <input type="email" class="form-control" placeholder="example@test.com"
                        name="email">
             </div>
-            <div class="col-sm-6">
-                <input type="password" class="form-control" style="width:555px" placeholder="password" name="password">
+            <div class="form-group col-md-5">
+                <input type="password" class="form-control" placeholder="password" name="password">
             </div>
         </div>
-        <br>
 
-        <div class="row">
-            <div class="col-sm-12">
+        <div class="form-row">
+            <div class="form-group col-md-2">
                 <button type="submit" class="btn btn-info">Login</button>
             </div>
         </div>

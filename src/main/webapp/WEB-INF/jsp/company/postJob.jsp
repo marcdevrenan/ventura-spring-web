@@ -13,7 +13,9 @@
 <body>
 
 <div class="container">
-    <h2>Post Job Form</h2>
+    <div class="page-header">
+        <h2>Ventura Post Job</h2>
+    </div>
     <form action="/company/postJob" method="post">
         <div class="form-group">
             <input type="hidden" name="userId" value=${user.id}>

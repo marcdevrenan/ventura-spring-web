@@ -21,6 +21,10 @@ public class CandidateJobController {
         List jobs = jobService.listJobs();
         model.addAttribute("jobs", jobs);
 
+        Integer candidateId = ((CandidateJob) model.getAttribute("candidateJob")).getCandidateId();
+        List applications = candidateJobService.listByCandidateId(candidateId);
+        model.addAttribute("applications", applications);
+
         return "/candidate/home";
     }
 
